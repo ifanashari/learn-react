@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function ListItem(item){
-    return(
-        <div>
-            {item.todoText}
-        </div>
-    )
+export default class ListItem extends Component {
+    render() {
+        return (
+            <div>
+                {this.props.item.todoText}
+            </div>
+        )
+    }
 }
-
-export default ListItem

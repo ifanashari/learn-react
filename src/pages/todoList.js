@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import ListItem from './../components/todo/listItem'
+
 class TodoList extends Component {
     constructor(){
         super()
@@ -13,8 +15,14 @@ class TodoList extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.tripDoSomeThing.bind(this)}>Alpha</button>
-                {this.props.todo.listItem[1].todoText}
+                
+                {
+                    this.props.todo.listItem.map((data, index) => {
+                        return(
+                            <ListItem key={index} item={data} />
+                        )
+                    })
+                }
             </div>
         )
     }

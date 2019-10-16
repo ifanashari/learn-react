@@ -1,19 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import * as serviceWorker from './serviceWorker';
+
 import Main from './pages/main'
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import allreducers from './reducers'
 
-// =======================><>|Main style|<><=======================
-
-import './assets/css/style.css'
-import './assets/css/layout.css'
-
-// =======================><>|Main style|<><=======================
+import './assets/css/main.css'
 
 // =======================><>|Redux|<><=======================
 
