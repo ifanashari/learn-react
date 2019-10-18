@@ -1,0 +1,11 @@
+.content{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+
+    &--container{
+        width: calc(100% - 80px);
+        margin-left: auto;
+        padding: 15px;
+    }
+}
