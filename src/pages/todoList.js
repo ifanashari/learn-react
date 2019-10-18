@@ -2,27 +2,31 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import ListItem from './../components/todo/listItem'
+import ListCounter from './../components/todo/listCounter';
 
 class TodoList extends Component {
     constructor(){
         super()
     }
-
-    tripDoSomeThing(){
-        this.props.tripMethod(true)
+    
+    tripUpdateListItem(payload){
+        this.props.updateListItem(payload)
     }
 
     render() {
         return (
             <div>
-                
-                {
-                    this.props.todo.listItem.map((data, index) => {
-                        return(
-                            <ListItem key={index} item={data} />
-                        )
-                    })
-                }
+                <ListItem 
+                    listItem={this.props.todo.listItem}
+                    onTripUpdateListItem={this.tripUpdateListItem.bind(this)} 
+                />
+
+                <ListCounter 
+                    dataCounter={{
+                        done: this.props.todo.done,
+                        notDone: this.props.todo.notDone,
+                    }} 
+                />
             </div>
         )
     }
@@ -35,12 +39,18 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return{
-        tripMethod: (payload) => {
+    return {
+        updateListItem: (listItemIndex) => {
             dispatch({
-                type: 'DO_SOMETHING',
-                payload: payload
-            })
+                type: 'UPDATE_LIST_ITEM',
+                payload: listItemIndex
+            }) 
+        },
+
+        getDataCounter: () => {
+            dispatch({
+                type: 'GET_TODO_LIST_COUNTER'
+            }) 
         }
     }
 }

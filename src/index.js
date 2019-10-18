@@ -4,20 +4,17 @@ import * as serviceWorker from './serviceWorker';
 
 import Main from './pages/main'
 
+
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import allreducers from './reducers'
+import allReducers from './reducers'
 
-import './assets/css/main.css'
-
-// =======================><>|Redux|<><=======================
+import "./assets/css/main.css"
 
 const store = createStore(
-    allreducers,
+    allReducers,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
-
-// =======================><>|Redux|<><=======================
 
 ReactDOM.render(
     <Provider store={store}>
