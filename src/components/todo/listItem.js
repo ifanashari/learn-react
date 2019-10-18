@@ -6,6 +6,10 @@ export default class ListItem extends Component {
         this.props.onTripUpdateListItem(index)
     }
 
+    removeTodo(index){
+        this.props.onTripRemoveTodo(index)
+    }
+
     render() {
         return (
             <div>
@@ -25,6 +29,10 @@ export default class ListItem extends Component {
                                 <span>
                                     : status {data.status === true ? 'Done' : 'Not Done'}
                                 </span>
+
+                                <button onClick={this.removeTodo.bind(this, index)}>
+                                    x
+                                </button>
                             </div>
                         )
                     })

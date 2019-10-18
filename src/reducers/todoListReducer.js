@@ -30,7 +30,30 @@ const todoListReducer = (state = intialState, action) => {
                 done: countTodoStatus(tmpListItem).done,
                 notDone: countTodoStatus(tmpListItem).notDone
             }
-            
+        
+        case 'ADD_TODO':
+            tmpListItem.push({
+                todoText: action.payload,
+                status: false
+            })
+
+            return {
+                ...state,
+                listItem: tmpListItem,
+                done: countTodoStatus(tmpListItem).done,
+                notDone: countTodoStatus(tmpListItem).notDone
+            }
+
+        case 'REMOVE_TODO':
+            tmpListItem.splice(action.payload, 1)
+        
+            return {
+                ...state,
+                listItem: tmpListItem,
+                done: countTodoStatus(tmpListItem).done,
+                notDone: countTodoStatus(tmpListItem).notDone
+            }
+
         default:
             
             return {
