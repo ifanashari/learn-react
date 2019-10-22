@@ -9,7 +9,7 @@ const intialState = {
             status: false
         },
         {
-            todoText: "Delta",
+            todoText: "Charlie",
             status: false
         }
     ],
