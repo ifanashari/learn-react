@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import classNames from 'classnames'
 
 import ListItem from './../components/todo/listItem'
 import ListCounter from './../components/todo/listCounter';
@@ -25,20 +26,24 @@ class TodoList extends Component {
     render() {
         return (
             <div>
-                <ListItem 
-                    listItem={this.props.todo.listItem}
-                    onTripUpdateListItem={this.tripUpdateListItem.bind(this)} 
-                    onTripRemoveTodo={this.tripRemoveTodo.bind(this)}
-                />
+                <h1>To Do Example</h1>
+            
+                <div className={classNames('todo', 'card_panel', 'card_panel--w_half')}>
+                    <ListItem 
+                        listItem={this.props.todo.listItem}
+                        onTripUpdateListItem={this.tripUpdateListItem.bind(this)} 
+                        onTripRemoveTodo={this.tripRemoveTodo.bind(this)}
+                    />
 
-                <ListForm onTripAddTodo={this.tripAddTodo.bind(this)} />
+                    <ListForm onTripAddTodo={this.tripAddTodo.bind(this)} />
 
-                <ListCounter 
-                    dataCounter={{
-                        done: this.props.todo.done,
-                        notDone: this.props.todo.notDone,
-                    }}
-                />
+                    <ListCounter 
+                        dataCounter={{
+                            done: this.props.todo.done,
+                            notDone: this.props.todo.notDone,
+                        }}
+                    />
+                </div>
             </div>
         )
     }
