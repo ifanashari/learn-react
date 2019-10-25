@@ -1,19 +1,13 @@
 import React, { Component } from 'react'
-import { Switch, Route, useRouteMatch } from 'react-router-dom'
 
-import NewsList from './newsList'
+import { Link } from 'react-router-dom'
 
 export default class MainNews extends Component {
-    constructor(){
-        super()
-    }
-
     render() {
         return (
-            <Switch>
-                <Route exact path={`${this.props.match.path}/`} component={NewsList} />
-                {/* <Route exact path={`${this.props.match.path}/`} component={NewsList} /> */}
-            </Switch>
+            <div>
+                <Link to="news-list/news/1">al</Link>
+            </div>
         )
     }
 }
