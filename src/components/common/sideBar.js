@@ -9,6 +9,7 @@ export default class SideBar extends Component {
                 <div className="side_bar--container">
                     <Link to="/">Home</Link>
                     <Link to="/todo">Todo List here</Link>
+                    <Link to="/news-list">News here</Link>
                 </div>
             </div>
         )

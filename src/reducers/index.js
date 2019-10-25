@@ -1,9 +1,11 @@
-import todoListReducer from './todoListReducer.js'
+import todoListReducer from './todoListReducer'
+import newsListReducer from './newsListReducer'
 
 import { combineReducers } from 'redux'
 
 const allReducers = combineReducers({
-    todoList: todoListReducer
+    todoList: todoListReducer,
+    newsList: newsListReducer,
 })
 
 export default allReducers
